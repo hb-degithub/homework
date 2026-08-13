@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>胡澜译 - 个人作品集</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #f5f7fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 头部区域 */
+        .header {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #1a3a5c 0%, #2d5a87 100%);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+            animation: fadeIn 1s ease 0.3s both;
+        }
+
+        /* 区块通用样式 */
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            animation: fadeInUp 0.6s ease both;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.3s; }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: #1a3a5c;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e8ecf1;
+            font-weight: 600;
+        }
+
+        /* 技能列表 */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background-color: #e8f0f7;
+            color: #1a3a5c;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background-color: #1a3a5c;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* 作品卡片 */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid #e8ecf1;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(26, 58, 92, 0.15);
+            border-color: #1a3a5c;
+        }
+
+        .project-card h3 {
+            color: #1a3a5c;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .project-card p {
+            color: #5a6c7d;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* 联系方式 */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-item .label {
+            color: #5a6c7d;
+            font-size: 0.95rem;
+            min-width: 80px;
+        }
+
+        .contact-item .value {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .contact-item a {
+            color: #1a3a5c;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* 动画定义 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 24px;
+            color: #8a9aa8;
+            font-size: 0.85rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 24px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部：姓名与简介 -->
+        <header class="header">
+            <h1>胡澜译</h1>
+            <p class="subtitle">计算机科学与技术 | 热爱编程与技术探索</p>
+        </header>
+
+        <!-- 技能列表 -->
+        <section class="section">
+            <h2 class="section-title">技能</h2>
+            <div class="skills-list">
+                <span class="skill-tag">HTML / CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Git</span>
+            </div>
+        </section>
+
+        <!-- 作品展示 -->
+        <section class="section">
+            <h2 class="section-title">作品</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>个人博客系统</h3>
+                    <p>基于 Python Flask 框架开发的个人博客，支持文章发布、分类管理和评论功能。</p>
+                </div>
+                <div class="project-card">
+                    <h3>校园二手交易平台</h3>
+                    <p>使用 Java Spring Boot 构建的校园闲置物品交易平台，实现用户认证与商品管理。</p>
+                </div>
+                <div class="project-card">
+                    <h3>数据可视化面板</h3>
+                    <p>利用 ECharts 实现的数据分析展示页面，支持多种图表类型与实时数据刷新。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section class="section">
+            <h2 class="section-title">联系方式</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="label">邮箱</span>
+                    <span class="value">
+                        <a href="mailto:670486183@qq.com">670486183@qq.com</a>
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span class="label">网站</span>
+                    <span class="value">
+                        <a href="https://hlydwz.com" target="_blank">hlydwz.com</a>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>&copy; 2025 胡澜译. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
